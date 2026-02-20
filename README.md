@@ -1,2 +1,2 @@
 # gregoehmen-io
-Migrating gregoehmen.io (FCPO) website to github
+Migrating gregoehmen.io (FCPO) website to github yes
