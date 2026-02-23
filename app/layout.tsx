@@ -18,7 +18,8 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
-  openGraph: {
+  /* This commented out section is for testing on opengraph.xyz to see what thumbnails look like on SEO and socials. 
+    openGraph: {
     title: "Greg Oehmen | Fractional CPO for Early-Stage Startups",
     description: "Fractional CPO for early-stage startups. I partner with founders to turn product vision into validated, engineering-ready roadmaps. Book a free discovery call.",
     url: "https://gregoehmen-io.vercel.app",
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     description: "Fractional CPO for early-stage startups. I partner with founders to turn product vision into validated, engineering-ready roadmaps. Book a free discovery call.",
     images: ["https://gregoehmen-io.vercel.app/og-image.png"],
   },
-  /*
+  */
   openGraph: {
     title: "Greg Oehmen | Fractional CPO",
     description: "Fractional CPO for early-stage startups. I partner with founders to turn product vision into validated, engineering-ready roadmaps.",
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
     title: "Greg Oehmen | Fractional CPO",
     description: "Fractional CPO for early-stage startups.",
     images: ["https://gregoehmen.io/og-image.png"],
-  },*/
+  },
 };
 
 export default function RootLayout({
