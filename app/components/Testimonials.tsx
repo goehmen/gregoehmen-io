@@ -72,7 +72,7 @@ export default function Testimonials() {
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="flex-[0_0_100%] min-w-0 px-8 sm:px-12">
                   <div className="text-center">
-                    <div className="text-6xl text-accent-teal/20 font-serif leading-none mb-4">&ldquo;</div>
+                    <div className="text-6xl text-accent-teal/90 font-serif leading-none mb-4">&ldquo;</div>
                     <blockquote className="text-xl md:text-2xl leading-relaxed mb-8">{testimonial.quote}</blockquote>
                     <cite className="not-italic block">
                       <span className="text-lg font-semibold">{testimonial.author}</span>

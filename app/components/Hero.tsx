@@ -24,11 +24,11 @@ export default function Hero() {
           </p>
   
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#book" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-gradient-to-r from-accent-teal to-accent-blue rounded-lg hover:opacity-90 transition-opacity">
+            <a href="#book" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-accent-teal rounded-lg hover:opacity-90 transition-opacity">
               Book a Call
             </a>
             
-            <a href="#services" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold border-2 border-white/30 rounded-lg hover:border-white/60 hover:bg-white/5 transition-all">
+            <a href="#services" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold border-2 border-accent-teal text-accent-teal rounded-lg hover:bg-accent-teal/10 transition-all">
               Learn More
             </a>
           </div>

@@ -28,7 +28,7 @@ export default function About() {
   
             {/* Right: Who I Am */}
             <div>
-              <h3 className="text-sm font-semibold text-accent-blue uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-accent-teal uppercase tracking-wider mb-4">
                 Who I Am
               </h3>
               <p className="text-lg sm:text-xl leading-relaxed mb-6">
