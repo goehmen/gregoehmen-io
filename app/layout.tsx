@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Greg Oehmen | Fractional CPO for Early-Stage Startups",
-    description: "I partner with founders to turn product vision into validated, engineering-ready roadmaps.",
+    description: "Fractional CPO for early-stage startups. I partner with founders to turn product vision into validated, engineering-ready roadmaps. Book a free discovery call.",
     url: "https://gregoehmen-io.vercel.app",
     siteName: "Greg Oehmen",
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Greg Oehmen | Fractional CPO for Early-Stage Startups",
-    description: "I partner with founders to turn product vision into validated, engineering-ready roadmaps.",
+    description: "Fractional CPO for early-stage startups. I partner with founders to turn product vision into validated, engineering-ready roadmaps. Book a free discovery call.",
     images: ["https://gregoehmen-io.vercel.app/og-image.png"],
   },
   /*
