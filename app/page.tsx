@@ -4,6 +4,7 @@ import Services from './components/Services';
 import About from './components/About';
 import Testimonials from './components/Testimonials';
 import BookCall from './components/BookCall';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <About />
       <Testimonials />
       <BookCall />
+      <Footer />
     </main>
   );
 }

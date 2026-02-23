@@ -10,6 +10,11 @@
   --color-accent-blue: #ffffff;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
