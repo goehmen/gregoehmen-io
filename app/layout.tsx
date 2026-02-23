@@ -19,6 +19,28 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
   },
   openGraph: {
+    title: "Greg Oehmen | Fractional CPO for Early-Stage Startups",
+    description: "I partner with founders to turn product vision into validated, engineering-ready roadmaps.",
+    url: "https://gregoehmen-io.vercel.app",
+    siteName: "Greg Oehmen",
+    images: [
+      {
+        url: "https://gregoehmen-io.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Greg Oehmen - Fractional CPO",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Greg Oehmen | Fractional CPO for Early-Stage Startups",
+    description: "I partner with founders to turn product vision into validated, engineering-ready roadmaps.",
+    images: ["https://gregoehmen-io.vercel.app/og-image.png"],
+  },
+  /*
+  openGraph: {
     title: "Greg Oehmen | Fractional CPO",
     description: "Fractional CPO for early-stage startups. I partner with founders to turn product vision into validated, engineering-ready roadmaps.",
     url: "https://gregoehmen.io",
@@ -38,7 +60,7 @@ export const metadata: Metadata = {
     title: "Greg Oehmen | Fractional CPO",
     description: "Fractional CPO for early-stage startups.",
     images: ["https://gregoehmen.io/og-image.png"],
-  },
+  },*/
 };
 
 export default function RootLayout({
