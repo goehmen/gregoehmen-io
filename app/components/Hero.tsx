@@ -13,14 +13,13 @@ export default function Hero() {
         {/* Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            You Raised the Round.
+            Build Products With AI.
             <br />
-            Now let&apos;s build the proof.
+            Ship With Confidence.
           </h1>
   
           <p className="mt-6 text-lg sm:text-xl md:text-2xl text-foreground-secondary max-w-2xl mx-auto leading-relaxed">
-            Fractional CPO for early-stage startups. I partner with founders 
-            to turn product vision into validated, engineering-ready roadmaps.
+            Hands-on coaching and advisory for engineering leaders building with AI. Fractional CPO for startups ready for dedicated product leadership.
           </p>
   
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">

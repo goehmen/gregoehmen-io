@@ -1,5 +1,5 @@
 # generated: 2026-04-26
-# last_updated: 2026-04-27 (story 1-1 done; story 1-2 created as ready-for-dev)
+# last_updated: 2026-04-27 (story 1-2 complete, moved to review)
 # project: gregoehmen-io
 # project_key: NOKEY
 # tracking_system: file-system
@@ -45,7 +45,7 @@ development_status:
   # Epic 1: Home Page Repositioning
   epic-1: in-progress
   1-1-header-navigation-update: done
-  1-2-hero-section-repositioning: ready-for-dev
+  1-2-hero-section-repositioning: review
   1-3-two-track-services-section: backlog
   1-4-runnersrun-case-study-section: backlog
   1-5-about-section-update: backlog
