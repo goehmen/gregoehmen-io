@@ -361,6 +361,33 @@ So that I can assess Greg's enterprise-scale experience without an explicit "ava
 **And** the language uses signals for senior product leadership (strategic product leadership, cross-functional fluency, systems thinking, platform scale)
 **And** there is NO explicit "available for FTE" CTA or announcement
 
+### Story 1.7: Hero & Site-Wide Messaging Alignment
+
+As a coaching/advisory prospect or engineering leader,
+I want the hero headline, subheadline, footer, and testimonials heading to clearly reflect the AI-native coaching offer,
+So that every visible copy element on the page reinforces the same primary positioning.
+
+**Acceptance Criteria:**
+
+**Given** I land on the home page and read the hero `<h1>`
+**When** I see the headline
+**Then** the headline explicitly communicates coaching/advisory as the offer type — not just AI-native building generically
+**And** the two headline lines read as a single coherent message (not two disconnected imperatives)
+
+**Given** I read the hero subheadline
+**When** I evaluate it as a coaching/advisory prospect
+**Then** the subheadline leads with coaching/advisory for engineering leaders as the primary message
+**And** Fractional CPO is present as a visible second pillar but clearly subordinate
+**And** the total character count does not push the CTA below the fold on any tested viewport (375px, 640px, 768px)
+
+**Given** I scroll to the footer
+**When** I read the footer tagline
+**Then** it reflects the new AI-native coaching primary positioning — not "Fractional CPO for early-stage startups" alone
+
+**Given** I scroll to the Testimonials section
+**When** I read the section heading
+**Then** the heading does not exclusively address "Founders" — it is inclusive of engineering leaders or neutral
+
 ### Story 1.6: Global Metadata & OG Tags Update
 
 As a visitor sharing the site on social media or finding it via search,

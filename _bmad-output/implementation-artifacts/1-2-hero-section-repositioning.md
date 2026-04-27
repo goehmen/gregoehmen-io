@@ -1,6 +1,6 @@
 # Story 1.2: Hero Section Repositioning
 
-Status: review
+Status: done
 
 ## Story
 
