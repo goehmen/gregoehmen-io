@@ -80,6 +80,33 @@ If the verdict is READY FOR DEV, say so and stop. Do not suggest improvements be
 - Use a different model or fresh context than the SM agent that created the story. The SM agent has accumulated assumptions; the validator should have none.
 - If the verdict is NEEDS REVISION, return to `/bmad-create-story` or edit the story file directly. Do not proceed to `/bmad-dev-story` until the verdict is READY FOR DEV.
 
+## gregoehmen-io Project-Specific Checklist Items
+
+The following items apply specifically to this project and should be evaluated alongside the generic checklist above.
+
+**Unit Tests — always N/A**
+This project has no test framework installed. The generic checklist item "There is at least one AC requiring unit tests" is permanently N/A for every story. Smoke tests are the only testing mechanism. Do not fail a story on this item.
+
+**RSC status documented in dev notes**
+Dev notes must state the RSC or client component status for every file the story modifies. If any file gains `'use client'`, the story must justify it (hook, browser API, or event listener required). If dev notes are silent on this, that is a FAIL — a dev agent will make the wrong call without explicit direction.
+
+**`npm run build` in smoke test**
+Every story's smoke test checklist must include "`npm run build` exits zero" as an explicit step. Vercel auto-deploys on push to main — a broken build is a broken production deploy. If this step is absent from the smoke test, that is a FAIL.
+
+**Global smoke test referenced**
+Any story touching a shared component (Header, Hero, Services, About, Testimonials, BookCall, Footer, page.tsx, globals.css, layout.tsx) must include or reference the global smoke test from `project-context.md`:
+- Home page renders at `/`
+- Header is fixed and visible
+- Logo links to `/`
+- All anchor links scroll to correct sections
+- Portfolio opens `goehmen.dev` in a new tab
+- `npm run build` exits zero
+
+If the story touches shared components and the smoke test does not include these items (or explicitly reference the global smoke test), that is a FAIL.
+
+**Open GitHub issues check**
+Dev notes must confirm that `gh issue list --repo goehmen/gregoehmen-io --state open` was run and any issues relevant to the files being touched are called out. If dev notes are silent on open issues, that is a FAIL. Relevant issues must either be addressed in the story or explicitly noted as out of scope with a reason.
+
 ## Workflow Position
 
 ```
