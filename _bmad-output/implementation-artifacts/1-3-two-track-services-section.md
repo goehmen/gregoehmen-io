@@ -1,6 +1,6 @@
 # Story 1.3: Two-Track Services Section
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 
@@ -18,24 +18,24 @@ So that I can quickly identify which applies to my situation without confusion.
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Restructure Services.tsx into two stacked full-width tracks (AC: #1, #3)
-  - [ ] 1.1: Replace current "Product Strategy" / "Product Execution" grouping with Track 1 (AI-Native Coaching) and Track 2 (Fractional CPO)
-  - [ ] 1.2: Each track is a full-width block — stacked vertically, NOT side-by-side columns
-  - [ ] 1.3: Track 1 background: `bg-background-secondary`; Track 2 background: `bg-background` — see Dev Notes for layout pattern
-  - [ ] 1.4: Write Track 1 service data (new — see copy guidance in Dev Notes)
-  - [ ] 1.5: Update Track 2 service data (largely preserve existing cards — see Dev Notes)
-  - [ ] 1.6: Keep `id="services"` on the outer `<section>` element — do NOT move it (closes GitHub Issue #8 as a verification side effect)
-- [ ] Task 2: Add per-track CTAs linking to `#book` (AC: #2)
-  - [ ] 2.1: Add "Book a Call" CTA at the bottom of Track 1 (use primary button pattern — see Dev Notes)
-  - [ ] 2.2: Add "Book a Call" CTA at the bottom of Track 2
-- [ ] Task 3: Verify ServiceCard.tsx is sufficient as-is (AC: #1)
-  - [ ] 3.1: Confirm `ServiceCard` renders correctly in both tracks — NO variant prop needed; visual differentiation is at the track level, not the card level
-  - [ ] 3.2: If ServiceCard.tsx needs any change, document what and why in Dev Agent Record
-- [ ] Task 4: Verify no regressions
-  - [ ] 4.1: `id="services"` anchor scrolls correctly from header nav and hero CTA — close GitHub Issue #8 after confirming
-  - [ ] 4.2: `#book` CTA links scroll to BookCall section
-  - [ ] 4.3: `npm run build` completes with zero errors
-  - [ ] 4.4: `npm run lint` — no new errors introduced (pre-existing Footer.tsx error is not a regression)
+- [x] Task 1: Restructure Services.tsx into two stacked full-width tracks (AC: #1, #3)
+  - [x] 1.1: Replace current "Product Strategy" / "Product Execution" grouping with Track 1 (AI-Native Coaching) and Track 2 (Fractional CPO)
+  - [x] 1.2: Each track is a full-width block — stacked vertically, NOT side-by-side columns
+  - [x] 1.3: Track 1 background: `bg-background-secondary`; Track 2 background: `bg-background` — see Dev Notes for layout pattern
+  - [x] 1.4: Write Track 1 service data (new — see copy guidance in Dev Notes)
+  - [x] 1.5: Update Track 2 service data (largely preserve existing cards — see Dev Notes)
+  - [x] 1.6: Keep `id="services"` on the outer `<section>` element — do NOT move it (closes GitHub Issue #8 as a verification side effect)
+- [x] Task 2: Add per-track CTAs linking to `#book` (AC: #2)
+  - [x] 2.1: Add "Book a Call" CTA at the bottom of Track 1 (use primary button pattern — see Dev Notes)
+  - [x] 2.2: Add "Book a Call" CTA at the bottom of Track 2
+- [x] Task 3: Verify ServiceCard.tsx is sufficient as-is (AC: #1)
+  - [x] 3.1: Confirm `ServiceCard` renders correctly in both tracks — NO variant prop needed; visual differentiation is at the track level, not the card level
+  - [x] 3.2: If ServiceCard.tsx needs any change, document what and why in Dev Agent Record
+- [x] Task 4: Verify no regressions
+  - [x] 4.1: `id="services"` anchor scrolls correctly from header nav and hero CTA — close GitHub Issue #8 after confirming
+  - [x] 4.2: `#book` CTA links scroll to BookCall section
+  - [x] 4.3: `npm run build` completes with zero errors
+  - [x] 4.4: `npm run lint` — no new errors introduced (pre-existing Footer.tsx error is not a regression)
 
 ## Dev Notes
 
@@ -229,16 +229,64 @@ Run manually in browser against `localhost:3000` before merging.
 
 ### Agent Model Used
 
-_(to be filled in)_
+Claude Opus 4.6
 
 ### Completion Notes List
 
-_(to be filled in)_
+- Restructured Services.tsx from single-section FCPO layout to two stacked full-width tracks
+- Track 1 (AI-Native Building): 3 new service cards (Methodology Foundations, Guided Project Build, Enterprise Readiness) with Blocks, Wrench, ShieldCheck icons from lucide-react
+- Track 2 (Fractional CPO): Preserved all 7 existing cards with original copy; updated section headline and subtitle; kept Product Strategy/Product Execution sub-groupings
+- Track 1 label uses `text-accent-teal`; Track 2 track-level label uses `text-accent-blue` for visual differentiation; Track 2 sub-labels (Product Strategy, Product Execution) keep `text-accent-teal`
+- Both tracks have "Book a Discovery Call" CTA using primary button pattern from Hero.tsx
+- Added `import type { JSX } from 'react'` and `: JSX.Element` return type per project-context.md rules
+- ServiceCard.tsx confirmed as-is — no changes needed, no variant prop added
+- Existing card copy uses Unicode escapes (\u2019, \u2018) instead of `&apos;` for apostrophes/quotes — consistent rendering
+- Track 1 copy avoids "courses", "curriculum", "bootcamp" per story constraints
+- Stale subtitle "From strategy to shipped product. I partner with founders..." replaced in Track 2 (resolves finding from Story 1.2 code review)
+- GitHub Issue #8 closed — `id="services"` preserved on outer `<section>`
+- `npm run build` passes (zero errors); `npm run lint` shows only pre-existing Footer.tsx error (not a regression)
 
 ### File List
 
-_(to be filled in)_
+- `app/components/Services.tsx` (modified)
+- `app/components/ServiceCard.tsx` (verified — no changes)
+- `_bmad-output/implementation-artifacts/sprint-status.yaml` (updated)
 
 ### Change Log
 
-_(to be filled in)_
+- 2026-04-27: Implemented two-track Services section (Story 1.3). Track 1: AI-Native Building coaching/advisory with 3 new cards. Track 2: Fractional CPO with 7 preserved cards and updated framing. Added per-track CTAs. Closed GitHub Issue #8.
+- 2026-04-27: Code review run. Findings below — fixes pending before merge.
+- 2026-04-27: Review fixes applied — M1 (em dash entity), S1 (heading hierarchy). D1 deferred to #12, D2 deferred to #13. Story marked done.
+
+## Code Review Record
+
+### Review Date
+2026-04-27
+
+### Must Fix (blocks merge)
+
+**M1 — `&mdash;` HTML entity in JSX text (Services.tsx:79)** — RESOLVED
+JSX only processes the 5 predefined XML entities. `&mdash;` renders as the literal string `&mdash;` in the browser instead of an em dash. Fix: replace with `{'\u2014'}` or the literal `—` character. All other descriptions in this file correctly use `\u2014` Unicode escapes inside JS string literals.
+*Resolution: Replaced `&mdash;` with `{'\u2014'}` on line 79.*
+
+### Should Fix
+
+**S1 — Heading hierarchy inversion (Services.tsx:72, 106)** — RESOLVED
+Each track uses `<h3>` for the eyebrow label (e.g. "AI-Native Building") immediately before an `<h2>` for the track headline. An h3 before an h2 within the same container creates an inverted heading outline and breaks screen reader navigation by heading. Fix: change the eyebrow `<h3>` elements to `<p>` (they are decorative labels, not structural headings).
+*Resolution: Changed both track-level eyebrow `<h3>` elements to `<p>` on lines 72 and 106.*
+
+### Deferred — Track as GitHub Issues
+
+**D1 — Duplicate CTAs lack aria-label differentiation** — Deferred to GitHub Issue #12
+Both tracks render `<a href="#book">Book a Discovery Call</a>` with identical text. Screen reader users navigating by link list see two indistinguishable entries. Fix: add `aria-label` to each CTA identifying the track (e.g. `"Book a discovery call for AI-Native Building coaching"`). WCAG SC 2.4.4.
+
+**D2 — Track 1 third card orphans at sm breakpoint** — Deferred to GitHub Issue #13
+Three cards with `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`: at 640–1023px, card 3 sits alone in a second row. Cosmetic only.
+
+### Accepted / No Action
+
+- All 3 acceptance criteria pass
+- Story constraints respected (no forbidden words, RSC preserved, `id="services"` on outer `<section>`)
+- ServiceCard.tsx unchanged
+- Stale subtitle from Story 1.2 code review resolved
+- `npm run build` and `npm run lint` clean per dev agent notes
