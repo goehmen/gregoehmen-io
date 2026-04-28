@@ -45,11 +45,11 @@ So that I can verify in under 30 seconds that he has actually shipped a producti
 
 - [x] [High][Patch] Card labels use `<h3>` instead of `<p>` — Dev Notes mandate `<p>` for eyebrow/card labels (carryforward from Story 1.3) [RunnersRun.tsx:45,55,65]
 - [x] [Medium][Patch] External link opens new tab without accessible label — add `aria-label="Visit RunnersRun (opens in new tab)"` [RunnersRun.tsx:76]
-- [x] [Medium][Defer] Missing `priority` prop on dashboard screenshot Image [RunnersRun.tsx:28] — deferred, below-fold image; real LCP concern but rule scoped to above-the-fold
-- [x] [Low][Defer] No `sizes` prop on dashboard screenshot Image [RunnersRun.tsx:28] — deferred, performance optimization; browser defaults to 100vw which is correct for w-full but non-optimal on narrow viewports
-- [x] [Low][Defer] CTA button text color relies on inherited body styles [RunnersRun.tsx:75] — deferred, pre-existing pattern across all components
-- [x] [Low][Defer] `<section>` not explicitly associated with heading via `aria-labelledby` [RunnersRun.tsx:6] — deferred, pre-existing pattern across all sections
-- [x] [Low][Defer] `next.config.ts` images configuration is empty — deferred, pre-existing; local public/ images work correctly without domain config
+- [x] [Medium][Defer→Resolved] Missing `priority` prop on dashboard screenshot Image — no fix; below-fold image, adding priority is an anti-pattern for off-screen resources
+- [x] [Low][Defer→Fixed] No `sizes` prop on dashboard screenshot Image — added `sizes="(min-width: 1280px) 1152px, 100vw"` [RunnersRun.tsx]
+- [x] [Low][Defer→Fixed] CTA button text color relies on inherited body styles — added explicit `text-foreground` to CTA className [RunnersRun.tsx]
+- [x] [Low][Defer→Fixed] `<section>` not explicitly associated with heading via `aria-labelledby` — added `id="runnersrun-heading"` to h2, `aria-labelledby="runnersrun-heading"` to section [RunnersRun.tsx]
+- [x] [Low][Defer→Resolved] `next.config.ts` images configuration is empty — no fix; local public/ images work correctly without domain config, no external image domains in use
 
 ## Dev Notes
 
@@ -243,3 +243,4 @@ Claude Opus 4.6
 - 2026-04-27: Implemented Story 1.4 — created RunnersRun case study section component and integrated into home page between Services and About
 - 2026-04-27: Added RunnersRun dashboard screenshot below section headline
 - 2026-04-27: Applied patch fixes — card labels h3→p, CTA aria-label; resolved GH issues #2-7 (Header: absolute anchors, focus trap, outside-click/scroll dismiss, Portfolio aria-label+icon, nav deduplication; scroll-padding-top verified adequate)
+- 2026-04-27: Resolved all deferred review findings — sizes prop on Image, text-foreground on CTA, aria-labelledby on section/h2; priority and next.config.ts closed as no-fix-needed
