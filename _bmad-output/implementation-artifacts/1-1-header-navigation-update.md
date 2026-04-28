@@ -1,6 +1,6 @@
 # Story 1.1: Header Navigation Update
 
-Status: complete
+Status: done
 
 ## Story
 
