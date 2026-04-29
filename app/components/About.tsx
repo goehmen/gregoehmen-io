@@ -1,73 +1,71 @@
-export default function About() {
-    return (
-      <section id="about" className="py-20 sm:py-24 bg-background">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-              About
-            </h2>
+import type { JSX } from 'react';
+
+export default function About(): JSX.Element {
+  return (
+    <section
+      id="about"
+      aria-labelledby="about-heading"
+      className="py-20 sm:py-24 bg-background"
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 id="about-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold">
+            About
+          </h2>
+        </div>
+
+        {/* Stacked columns */}
+        <div className="max-w-3xl mx-auto space-y-12">
+          {/* Who You Are */}
+          <div>
+            <p className="text-sm font-semibold text-accent-teal uppercase tracking-wider mb-4">
+              Who You Are
+            </p>
+            <p className="text-lg sm:text-xl leading-relaxed mb-6">
+              You&apos;re a founder who has raised the round — or is close to it — and product decisions are getting more complex and more consequential. You need seasoned product leadership, but not yet a full-time CPO.
+            </p>
+            <p className="text-foreground-secondary leading-relaxed mb-4">
+              Or you&apos;re a senior product leader who understands that the tools for building software have fundamentally changed, and you want to learn to use them the way they were meant to be used — not to generate code, but to apply product judgment at the execution layer.
+            </p>
+            <p className="text-foreground-secondary leading-relaxed">
+              Either way, you need a partner who has operated at both ends of the spectrum: enterprise scale and zero-to-one execution.
+            </p>
           </div>
-  
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Left: Who You Are (the founder) */}
-            <div>
-              <h3 className="text-sm font-semibold text-accent-teal uppercase tracking-wider mb-4">
-                Who You Are
-              </h3>
-              <p className="text-lg sm:text-xl leading-relaxed mb-6">
-                You&apos;re a recently funded founder navigating the critical transition from idea to execution.
-              </p>
-              <p className="text-foreground-secondary leading-relaxed mb-4">
-                Your product decisions are getting more complex—and more critical—but you&apos;re not yet ready for a full-time CPO. At the same time, demands on your time are multiplying. You simply can&apos;t go deep on product while running everything else.
-              </p>
-              <p className="text-foreground-secondary leading-relaxed">
-                That&apos;s where I come in. I bring seasoned product leadership exactly when it matters most—turning vision into strategy, and strategy into traction—so you can accelerate growth with confidence and focus.
-              </p>
-            </div>
-  
-            {/* Right: Who I Am */}
-            <div>
-              <h3 className="text-sm font-semibold text-accent-teal uppercase tracking-wider mb-4">
-                Who I Am
-              </h3>
-              <p className="text-lg sm:text-xl leading-relaxed mb-6">
-                I&apos;m Greg Oehmen, a product leader with 12+ years scaling platforms at Visa, Pivotal, Salesforce, and Apple.
-              </p>
-              <p className="text-foreground-secondary leading-relaxed mb-4">
-                I&apos;ve led teams from Series A through IPO, built products handling billions of API calls, and designed monetization strategies that drove 12x+ revenue growth. My expertise spans API platforms, B2B SaaS, GTM strategy, and pricing.
-              </p>
-              <p className="text-foreground-secondary leading-relaxed">
-                I specialize in helping funded founders bridge the gap between vision and execution—building products that are scalable, investable, and market-ready.
-              </p>
-            </div>
-          </div>
-  
-          {/* Bottom: My Approach */}
-          <div className="mt-16 pt-16 border-t border-white/10">
-            <h3 className="text-sm font-semibold text-accent-teal uppercase tracking-wider mb-8 text-center">
-              My Approach
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center">
-                <h4 className="font-semibold mb-2">Customer-Centric</h4>
-                <p className="text-sm text-foreground-secondary">Every decision informed by real user needs and data-backed insights.</p>
-              </div>
-              <div className="text-center">
-                <h4 className="font-semibold mb-2">Strategic & Pragmatic</h4>
-                <p className="text-sm text-foreground-secondary">Clear roadmap and focused execution—not bloated feature lists.</p>
-              </div>
-              <div className="text-center">
-                <h4 className="font-semibold mb-2">Collaborative</h4>
-                <p className="text-sm text-foreground-secondary">Product strategy is a shared vision built with founders and teams.</p>
-              </div>
-              <div className="text-center">
-                <h4 className="font-semibold mb-2">Execution-Focused</h4>
-                <p className="text-sm text-foreground-secondary">Strategy without execution is useless. I ensure teams ship.</p>
-              </div>
-            </div>
+
+          {/* Who I Am */}
+          <div>
+            <p className="text-sm font-semibold text-accent-teal uppercase tracking-wider mb-4">
+              Who I Am
+            </p>
+            <p className="text-lg sm:text-xl leading-relaxed mb-6">
+              I&apos;m Greg Oehmen — a product executive with 15+ years scaling platforms at Visa, Pivotal/VMware, and Salesforce, and most recently the solo founder of RunnersRun, a consumer SaaS application I designed, engineered, and shipped from zero to production using a modern full-stack and a structured AI-assisted development workflow I designed specifically for solo execution.
+            </p>
+            <p className="text-foreground-secondary leading-relaxed mb-4">
+              At Visa, I scaled the Digital Wallet Platform to 200+ issuing banks, 54M+ enrolled cards, and 4B+ annual transactions — achieving more than 10x revenue growth over four years. At Pivotal, I owned the Cloud Foundry strategic roadmap across a 75-person PM team during growth from $0 to $400M ARR. These are not credentials I reference lightly — they are the foundation of the product judgment I bring to every engagement.
+            </p>
+            <p className="text-foreground-secondary leading-relaxed mb-4">
+              RunnersRun is the proof that the judgment still works at the execution layer. I built it because the product didn&apos;t exist, using the same discipline — API-first architecture, forward-compatibility design, structured validation workflows — that I applied at enterprise scale. The difference is I did it alone, in months, using AI tools I orchestrated rather than tools that orchestrated me.
+            </p>
+            <p className="text-foreground-secondary leading-relaxed">
+              That experience is now a service. I work with a small number of founders as a Fractional CPO — turning product vision into validated, engineering-ready roadmaps — and with senior product leaders who want to learn to build with AI tools the right way: structured, disciplined, and grounded in real product thinking rather than vibe coding.
+            </p>
           </div>
         </div>
-      </section>
-    );
-  }
+
+        {/* My Approach */}
+        <div className="mt-16 pt-16 border-t border-white/10 max-w-3xl mx-auto">
+          <p className="text-sm font-semibold text-accent-teal uppercase tracking-wider mb-8 text-center">
+            My Approach
+          </p>
+          <div className="space-y-6">
+            <p><strong>Customer-Centric</strong> Every decision informed by real user needs and data-backed insights — not by what&apos;s technically interesting or competitively reactive.</p>
+            <p><strong>Strategic &amp; Pragmatic</strong> A clear roadmap and focused execution. Not bloated feature lists, not premature optimization. The smallest thing that proves the biggest hypothesis.</p>
+            <p><strong>Collaborative</strong> Product strategy is a shared vision built with founders and teams. I work alongside you, not above you.</p>
+            <p><strong>Execution-Focused</strong> Strategy without execution is hallucination. I ensure teams ship — and I&apos;ve proven I can ship alone when that&apos;s what the moment requires.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

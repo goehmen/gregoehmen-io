@@ -13,37 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Greg Oehmen | FCPO",
-  description: "Fractional CPO for early-stage startups. I partner with founders to turn product vision into validated, engineering-ready roadmaps.",
+  title: {
+    template: "%s | Greg Oehmen",
+    default: "Greg Oehmen | AI-Native Building & Fractional CPO",
+  },
+  description: "Apply product judgment at the execution layer. AI-native building advisory for senior leaders. Fractional CPO for startups.",
   icons: {
     icon: "/favicon.svg",
   },
-  /* This commented out section is for testing on opengraph.xyz to see what thumbnails look like on SEO and socials. 
-    openGraph: {
-    title: "Greg Oehmen | Fractional CPO for Early-Stage Startups",
-    description: "Fractional CPO for early-stage startups. I partner with founders to turn product vision into validated, engineering-ready roadmaps. Book a free discovery call.",
-    url: "https://gregoehmen-io.vercel.app",
-    siteName: "Greg Oehmen",
-    images: [
-      {
-        url: "https://gregoehmen-io.vercel.app/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Greg Oehmen - Fractional CPO",
-      },
-    ],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Greg Oehmen | Fractional CPO for Early-Stage Startups",
-    description: "Fractional CPO for early-stage startups. I partner with founders to turn product vision into validated, engineering-ready roadmaps. Book a free discovery call.",
-    images: ["https://gregoehmen-io.vercel.app/og-image.png"],
-  },
-  */
   openGraph: {
-    title: "Greg Oehmen | Fractional CPO",
-    description: "Fractional CPO for early-stage startups. I partner with founders to turn product vision into validated, engineering-ready roadmaps.",
+    title: "Greg Oehmen | AI-Native Building & Fractional CPO",
+    description: "Structured, spec-driven AI-native building for senior product and engineering leaders. Fractional CPO for early-stage startups. Partner with Greg Oehmen — 15+ years at Visa, Pivotal, and Salesforce.",
     url: "https://gregoehmen.io",
     siteName: "Greg Oehmen",
     images: [
@@ -51,15 +31,15 @@ export const metadata: Metadata = {
         url: "https://gregoehmen.io/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Greg Oehmen - Fractional CPO",
+        alt: "Greg Oehmen — AI-Native Building & Fractional CPO",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Greg Oehmen | Fractional CPO",
-    description: "Fractional CPO for early-stage startups.",
+    title: "Greg Oehmen | AI-Native Building & Fractional CPO",
+    description: "Structured, spec-driven AI-native building for senior product and engineering leaders. Fractional CPO for early-stage startups. Partner with Greg Oehmen — 15+ years at Visa, Pivotal & Salesforce.",
     images: ["https://gregoehmen.io/og-image.png"],
   },
 };

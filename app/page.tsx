@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import RunnersRun from './components/RunnersRun';
 import About from './components/About';
 import Testimonials from './components/Testimonials';
 import BookCall from './components/BookCall';
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Services />
+      <RunnersRun />
       <About />
       <Testimonials />
       <BookCall />
