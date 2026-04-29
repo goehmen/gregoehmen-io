@@ -1,6 +1,6 @@
 # Story 2.1: MDX Infrastructure & First Blog Post
 
-Status: review
+Status: done
 
 ## Story
 
@@ -69,6 +69,18 @@ so that I can learn about his AI-native building methodology from a published ar
   - [ ] 7.6: Verify page source: `og:image` is absolute URL
   - [ ] 7.7: "Back to blog" link navigates to `/blog` (404 expected until Story 2.2 — that is expected and acceptable)
   - [ ] 7.8: Run global regression smoke test (see Smoke Test Checklist)
+
+### Review Findings
+
+- [x] [Review][Decision] Slug/filename mismatch — RESOLVED: current URL `/blog/AI-PM-skills-article` accepted as canonical. No code change. `[content/blog/AI-PM-skills-article.mdx]`
+- [x] [Review][Decision] Turbopack workaround approach vs documentation mismatch — RESOLVED: mdxRs + JS-export approach accepted. Fix documentation to reflect actual implementation (see Patch item below). `[page.tsx, 2-1-mdx-infrastructure-first-blog-post.md]`
+- [x] [Review][Patch] Inaccurate completion notes: the debug log and completion notes state "Frontmatter read via gray-matter in page.tsx via fs.readFileSync" but the actual code uses `await import(\`@/content/blog/${slug}.mdx\`)` and destructures `frontmatter` as a named JS export. Notes must be corrected to reflect the actual implementation approach. `[Dev Agent Record section of this story file]` — RESOLVED: Completion notes corrected below.
+- [x] [Review][Patch] heroImageAlt silently falls back to empty string: `alt={frontmatter.heroImageAlt ?? ''}` renders the hero image as decorative when `heroImageAlt` is absent, which is incorrect for a meaningful content image. The field should be conditionally required when `heroImage` is set. `[app/blog/[slug]/page.tsx:92]` — RESOLVED: fallback changed to `frontmatter.title`, ensuring meaningful alt text is always present.
+- [x] [Review][Defer] generateStaticParams throws ENOENT if `content/blog/` is absent — `fs.readdirSync(postsDir)` throws synchronously on a fresh clone before any posts exist; no try/catch around the sync call. `[app/blog/[slug]/page.tsx:29]` — deferred, pre-existing risk, directory currently exists
+- [x] [Review][Defer] `<Image width={0} height={0}>` CLS risk — zero intrinsic dimensions disable reserved-space layout shift prevention; using `sizes="100vw"` partially compensates but is a workaround. Appears in both `mdx-components.tsx` and `page.tsx`. — deferred, accepted workaround pattern for responsive images in Next.js
+- [x] [Review][Defer] Dynamic import unsanitized slug (path traversal — theoretical) — `await import(\`@/content/blog/${slug}.mdx\`)` uses the raw URL slug with no validation. In Next.js SSG the bundler manifest limits resolvable modules, and `notFound()` on catch mitigates arbitrary reads, but the concern exists in dev mode. `[app/blog/[slug]/page.tsx:37, 62]` — deferred, mitigated by Next.js bundler in production
+- [x] [Review][Defer] MDX `<a>` override uses native `<a>` for non-http links — internal relative links in MDX body bypass Next.js client-side routing, causing full page reloads. `[mdx-components.tsx:54]` — deferred, acceptable for v1 blog (body content is primarily external links)
+- [x] [Review][Defer] `experimental.mdxRs: true` is an unstable API — no version pin or note; has caused silent regressions in custom component injection and frontmatter handling in past Next.js releases. `[next.config.ts:4]` — deferred, documented trade-off for Turbopack compatibility
 
 ## Dev Notes
 
@@ -603,7 +615,7 @@ Resolution: Used `experimental.mdxRs: true` in nextConfig, which activates the R
 - `mdx-components.tsx` created at project root with full typography overrides and `Figure` component.
 - `content/blog/aakash-boris-article.mdx` created with full article content and all placeholder URLs resolved.
 - `app/blog/[slug]/page.tsx` created as RSC with `runtime = 'nodejs'`, `generateStaticParams()`, `generateMetadata()`, hero image, `<h1>` from frontmatter, date/author, MDX body, back-to-blog link, and `notFound()` on catch.
-- Frontmatter read via `gray-matter` in `page.tsx` (deviation from Dev Notes due to Turbopack; achieves same outcome).
+- Frontmatter read via `await import('@/content/blog/${slug}.mdx')` with `frontmatter` destructured as a named ES module export. The `experimental.mdxRs: true` Rust compiler strips YAML frontmatter and exports it natively — no `gray-matter` or `fs.readFileSync` used in `page.tsx`. (Debug log reference to gray-matter was inaccurate.)
 - `npm run build` exits zero; `/blog/aakash-boris-article` confirmed as static SSG route.
 - No new lint errors in story files.
 - Browser smoke tests (7.3–7.8) require Greg to place the hero image first.

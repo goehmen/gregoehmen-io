@@ -77,7 +77,7 @@ export default async function BlogPost({ params }: Props): Promise<JSX.Element> 
               <figure className="mb-8">
                 <Image
                   src={frontmatter.heroImage}
-                  alt={frontmatter.heroImageAlt ?? ''}
+                  alt={frontmatter.heroImageAlt ?? frontmatter.title}
                   width={0}
                   height={0}
                   sizes="100vw"
