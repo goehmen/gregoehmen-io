@@ -13,7 +13,7 @@ export default function Footer() {
               Greg Oehmen
             </a>
             <p className="mt-2 text-sm text-foreground-secondary">
-              Fractional CPO for early-stage startups
+              AI-Native Building Advisory & Fractional CPO
             </p>
           </div>
 
