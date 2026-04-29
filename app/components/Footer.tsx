@@ -1,4 +1,4 @@
-import { Linkedin, Github, Globe } from 'lucide-react';
+import { Linkedin, Github, Globe, Mail } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -35,6 +35,9 @@ export default function Footer() {
 
           {/* Social Links */}
           <div className="flex items-center gap-4">
+            <a href="mailto:info@gregoehmen.io" className="p-2 text-foreground-secondary hover:text-white hover:bg-white/10 rounded-lg transition-all" aria-label="Email">
+              <Mail className="w-5 h-5" />
+            </a>
             <a href="https://linkedin.com/in/grego" target="_blank" rel="noopener noreferrer" className="p-2 text-foreground-secondary hover:text-white hover:bg-white/10 rounded-lg transition-all" aria-label="LinkedIn">
               <Linkedin className="w-5 h-5" />
             </a>
