@@ -106,7 +106,6 @@ If the story touches shared components and the smoke test does not include these
 
 **Open GitHub issues check**
 Dev notes must confirm that `gh issue list --repo goehmen/gregoehmen-io --state open` was run and any issues relevant to the files being touched are called out. If dev notes are silent on open issues, that is a FAIL. Relevant issues must either be addressed in the story or explicitly noted as out of scope with a reason.
-
 ## Workflow Position
 
 ```
