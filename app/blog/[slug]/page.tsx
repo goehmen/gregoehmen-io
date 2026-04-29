@@ -5,6 +5,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import fs from 'fs'
 import path from 'path'
+import Header from '@/app/components/Header'
+import Footer from '@/app/components/Footer'
 
 export const runtime = 'nodejs'
 
@@ -62,6 +64,8 @@ export default async function BlogPost({ params }: Props): Promise<JSX.Element> 
       await import(`@/content/blog/${slug}.mdx`)
 
     return (
+      <>
+      <Header />
       <main className="bg-background min-h-screen">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
           <nav className="mb-8">
@@ -107,6 +111,8 @@ export default async function BlogPost({ params }: Props): Promise<JSX.Element> 
           </article>
         </div>
       </main>
+      <Footer />
+      </>
     )
   } catch {
     notFound()
