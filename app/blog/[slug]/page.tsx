@@ -7,6 +7,7 @@ import fs from 'fs'
 import path from 'path'
 import Header from '@/app/components/Header'
 import Footer from '@/app/components/Footer'
+import EmailCapture from '@/app/components/EmailCapture'
 
 export const runtime = 'nodejs'
 
@@ -108,6 +109,7 @@ export default async function BlogPost({ params }: Props): Promise<JSX.Element> 
               </p>
             </header>
             <Post />
+            <EmailCapture />
           </article>
         </div>
       </main>

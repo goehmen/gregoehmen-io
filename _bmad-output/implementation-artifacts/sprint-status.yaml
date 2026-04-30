@@ -1,5 +1,5 @@
 # generated: 2026-04-26
-# last_updated: 2026-04-30
+# last_updated: 2026-04-29
 # project: gregoehmen-io
 # project_key: NOKEY
 # tracking_system: file-system
@@ -57,6 +57,6 @@ development_status:
   epic-2: in-progress
   2-1-mdx-infrastructure-first-blog-post: done
   2-2-blog-index-page: done
-  2-3-email-capture-on-blog-posts: backlog
-  2-4-publisher-documentation-workflow-verification: backlog
+  2-3-email-capture-on-blog-posts: done
+  2-4-publisher-documentation-workflow-verification: ready-for-dev
   epic-2-retrospective: optional
