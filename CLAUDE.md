@@ -45,6 +45,10 @@ Single-page marketing site for Greg Oehmen (Fractional CPO) built with Next.js 1
 
 **Deployment**: gregoehmen.io via Vercel. OpenGraph metadata is configured in `app/layout.tsx`.
 
+## Commit Policy
+
+Never create a git commit unless the user explicitly requests it in that message. Story completion, smoke test passing, and code review do NOT imply permission to commit. Wait for an explicit instruction such as "commit" or "commit this."
+
 ## Deferred Work
 
 Deferred findings from code reviews are tracked as GitHub Issues: https://github.com/goehmen/gregoehmen-io/issues

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Linkedin, Github, Globe, Mail } from 'lucide-react';
 
 export default function Footer() {
@@ -9,9 +10,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           {/* Brand */}
           <div>
-            <a href="/" className="text-xl font-bold text-white hover:text-accent-teal transition-colors">
+            <Link href="/" className="text-xl font-bold text-white hover:text-accent-teal transition-colors">
               Greg Oehmen
-            </a>
+            </Link>
             <p className="mt-2 text-sm text-foreground-secondary">
               AI-Native Building Advisory & Fractional CPO
             </p>

@@ -1,5 +1,5 @@
 # generated: 2026-04-26
-# last_updated: 2026-04-28
+# last_updated: 2026-04-29
 # project: gregoehmen-io
 # project_key: NOKEY
 # tracking_system: file-system
@@ -35,7 +35,7 @@
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 
 generated: 2026-04-26
-last_updated: 2026-04-28
+last_updated: 2026-04-30
 project: gregoehmen-io
 project_key: NOKEY
 tracking_system: file-system
@@ -54,9 +54,9 @@ development_status:
   epic-1-retrospective: optional
 
   # Epic 2: Blog System, Email Capture & Publisher Workflow
-  epic-2: backlog
-  2-1-mdx-infrastructure-first-blog-post: backlog
-  2-2-blog-index-page: backlog
-  2-3-email-capture-on-blog-posts: backlog
-  2-4-publisher-documentation-workflow-verification: backlog
+  epic-2: done
+  2-1-mdx-infrastructure-first-blog-post: done
+  2-2-blog-index-page: done
+  2-3-email-capture-on-blog-posts: done
+  2-4-publisher-documentation-workflow-verification: done
   epic-2-retrospective: optional

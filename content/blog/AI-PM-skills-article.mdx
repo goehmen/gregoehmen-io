@@ -1,0 +1,90 @@
+export const frontmatter = {
+  title: "Aakash Gupta wrote that PMs are the future of software. I went and tested the thesis.",
+  date: "2026-04-21",
+  description: "I spent months building RunnersRun solo to test Aakash Gupta's thesis that PM skills map directly to AI-native development. Here's what I found.",
+  slug: "AI-PM-skills-article",
+  heroImage: "/blog/github-contribs-LI-article.png",
+  heroImageAlt: "GitHub contribution graph zoomed in on February through April 2026, showing dense green contribution squares",
+  heroImageCaption: "My GitHub contribution graph. This is what AI tools made possible.",
+  canonicalUrl: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7452432849900765184/",
+}
+
+When [Aakash Gupta](https://www.linkedin.com/in/aagupta/) covers something, I read it carefully. So when he wrote about [Boris Cherny](https://www.linkedin.com/in/bcherny/) - the engineer who built Claude Code - claiming that the skills of a great product manager map almost exactly to the high-value work in an AI-native development workflow, I didn't just find it interesting. I decided to find out if it was true.
+
+I spent the next several months building [RunnersRun](https://runnersrun.app) solo, from zero to production. This is what I learned.
+
+(Aakash's article: '[The Man Who Built Claude Code Just Said PMs Are the Future of Software](https://aakashgupta.medium.com/the-man-who-built-claude-code-just-said-pms-are-the-future-of-software-8c6083a77c38)' - worth reading before this one.)
+
+## The argument that resonated
+
+Aakash's piece crystallizes something Cherny said that gets missed in the usual "will AI replace engineers" debate. Cherny isn't writing application code anymore. He's orchestrating - defining what needs to happen, sequencing work across parallel agents, catching compounding failures before they hit production. As Aakash frames it: that's a fundamentally different job than writing functions and debugging stack traces.
+
+The argument isn't that PMs can replace engineers. It's sharper than that. The gap that's closing is between people who think in systems and people who only execute tasks. Claude Code raises the floor for everyone. But it raises the ceiling most dramatically for people who already think like builders - who can decide what to build, sequence the work, and hold judgment about tradeoffs when there's no clean answer.
+
+That description fit me closely enough that I wanted to test it directly.
+
+## What I bring to the table
+
+My background is not a developer's background - but it's not a pure PM background either. I came up through Oracle as a DBA, then Apple on the database and infrastructure side. I built and led a DBA team at Gazillion Entertainment supporting multiple studios building online games for kids. At Bossa Nova Robotics I led a multi-function team that built an AWS-hosted online game that interacted via API with real-world physical robots - a small, scrappy team where everyone wore every hat and the only thing that mattered was whether the thing worked.
+
+Then the enterprise years: Salesforce (infrastructure automation, 170k+ servers), Pivotal ($0 to $400M ARR on Cloud Foundry), Visa (200+ issuing banks, 54M+ enrolled cards, 4B+ annual transactions). Scale, rigor, compliance, global platform complexity.
+
+Let me be clear about one thing: I have not written a lot of code. What I have is something different — and it turns out to be exactly what this kind of build requires.
+
+Fifteen years of product work across engineering, systems architecture, legal, finance, marketing, QA, sales, customer success, and operations gave me a specific kind of fluency: I know how each discipline thinks, what it needs, and where the friction lives between them. Building RunnersRun meant doing all of it myself — the GitHub workflow, the Stripe integration, the legal documentation, the marketing plan, the support infrastructure, the product decisions — simultaneously, without handoffs. The breadth is the point. A product manager who has spent years translating between these worlds turns out to be well-suited to owning all of them at once.
+
+That cross-functional fluency also shaped how I worked with Claude Code. When the AI proposed something technically clean, I could tell whether it was optimizing for developer convenience or for what the user actually needed to feel. Redirecting it toward user outcomes rather than implementation elegance — that judgment is not something you can prompt your way into. It is the accumulated pattern recognition of someone who has sat in the room when engineering says it's done and the customer says it's broken.
+
+## What the tools gave me
+
+I used [Anthropic](https://anthropic.com)'s Claude Code with [Brian BMad Madison](https://www.linkedin.com/in/bmadcode/)'s BMAD V6 — the Breakthrough Method for Agile AI-Driven Development, a free open-source framework built on a premise worth stating clearly: traditional AI tools do the thinking for you and produce average results; BMAD instead acts as a structured collaborator that brings out your best thinking in partnership with the AI ([github.com/bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD)). BMAD provides the workflow scaffolding — specialized agents across the full development lifecycle, structured phases from story creation through deployment, and the discipline of working with AI as a collaborator rather than an oracle.
+
+On top of that foundation I layered my own session architecture: each phase runs in a completely clean context with no memory of prior phases, specifically to prevent the reviewer from being anchored to the developer's reasoning. Opus handled generative work — story creation, development, and fixing — where deep reasoning matters. Sonnet handled review and validation — where independent judgment matters more than raw capability. Thinking mode was calibrated per stage: ultrathink for story creation and architecture, think hard for code review, plain for mechanical steps. The session isolation is the key design decision. A reviewer that remembers how the developer reasoned cannot give you an independent review. It can only give you confirmation.
+
+The design intent across all of it was correctness and reasoning integrity. Not speed. Not vibe coding.
+
+<Figure
+  src="/blog/github-contribs-LI-article.png"
+  alt="Full 12-month GitHub contribution graph showing near-zero activity for most of the year then a sharp burst of green squares starting in February 2026"
+  caption="My GitHub contribution graph. This is what AI tools made possible."
+/>
+
+Cherny describes running 10 to 15 Claude sessions simultaneously, treating AI like compute you schedule. My approach was different — sequential and isolated by design rather than parallel, for now. But the underlying insight is the same: the bottleneck is never the AI's capability. When, say, a delivered story failed a smoke test, the root cause was almost always under-specification on my end. The quality of my acceptance criteria. The clarity of what the user actually needed to feel at the end of that story. That is a PM problem, not an engineering problem. The AI was waiting on me, not the other way around.
+
+## What I built - and who it's for
+
+When I started RunnersRun I wasn't planning to take it commercial. But somewhere in the build I realized what I had — not just the product, but the capability. I decided to go all the way: commercial grade, enterprise-worthy, built to last. Just because I could. And because I believe there are runners out there who will find the same motivating force in the product that I do.
+
+RunnersRun answers one question: Am I going to hit my annual mileage goal?
+
+I want to be honest about who this app is for. Not every runner cares about a mileage goal. Plenty of people run for joy, for stress relief, for the social ritual of it. RunnersRun is probably not for them and that's fine.
+
+It's for a specific kind of runner. The one who sets a number at the start of the year and feels something about whether they're on track. The one who, on a cold Tuesday with a packed schedule and every reasonable excuse available, needs to know the honest answer to a simple question: should I run today? Not because an app is telling them to. Because their own number is.
+
+That question is an intrinsic motivator. Not a streak. Not a badge. Not a leaderboard. Just the number - am I ahead of pace or behind it, and by how much. RunnersRun puts that answer on the screen clearly, with a cumulative pace-line graph plotting actual miles against a required-pace trend line over the full goal period. That visualization does not exist as a standalone product anywhere in the market. Runners are solving this with Google Sheets today. I know because I was one of them.
+
+Next.js, TypeScript, Neon (PostgreSQL), Drizzle ORM, Clerk, Stripe, Trigger.dev, Vercel, Resend, PostHog, Sentry, Vitest, Playwright. Not a prototype. A real product with real infrastructure, built to the same API-first forward-compatibility standards I applied at Visa and Pivotal - every V1 data model designed for V1.1 Garmin and Strava integration without breaking changes. Enterprise rigor applied to a consumer product. That discipline predates AI by fifteen years.
+
+Private beta launched April 2026. Public beta June 2026.
+
+## So was Aakash right?
+
+Yes. With one clarification worth making explicit.
+
+The PMs who claim that future aren't going to be the ones who learned to code in a weekend. Aakash frames it as thinking like a systems architect — understanding what you're asking AI to do well enough to catch when it's quietly failing. I'd add three specifics from building RunnersRun: knowing when the output is wrong before it compounds, recognizing when the AI is optimizing for developer convenience instead of user outcome, and pushing back on technically clean solutions in favor of ones that are correct for the user. That last one doesn't come from learning to code. It comes from years of sitting in rooms where engineering said it was done and the customer said it was broken.
+
+That fluency is not the same as knowing how to write code. It's closer to what Cherny describes as his actual job now: defining what needs to happen, sequencing work across agents, holding accountability for the outcome when the last 10% goes sideways.
+
+I've operated at both ends of the spectrum - scrappy startup teams at Gazillion and Bossa Nova where I owned everything, and global enterprise platforms at Visa and Pivotal where the stakes of a wrong architecture decision were measured in hundreds of millions of transactions. Both built the same underlying thing: systems thinking, judgment under ambiguity, and an instinct for when something is wrong before anyone can articulate why.
+
+That is what AI tools made productive again. Not the coding ability I never had. The judgment I spent fifteen years developing.
+
+Cherny built the tool that makes this possible. Aakash articulated why PMs are positioned to use it well. I went and found out if they were right.
+
+RunnersRun is the answer.
+
+If you're a runner who tracks a goal and wants a better tool than a spreadsheet: [runnersrun.app](https://runnersrun.app)
+
+If you're a PM thinking about building something solo with AI tools - or want to understand how to do what I did - I'm working with a small number of people on exactly that. Reach out - I'm easy to find.
+
+*Greg Oehmen is a senior product executive, fractional CPO at Spatial Capital and [Hextropian.ai](https://hextropian.ai), and the founder of RunnersRun - a mileage goal tracking app for serious runners. [runnersrun.app](https://runnersrun.app)*
